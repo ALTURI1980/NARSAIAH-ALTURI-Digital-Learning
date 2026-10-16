@@ -45,8 +45,8 @@
 <body>
 <div class="header" id="secretHeader">
   <div><div class="logo" id="logoText">NARSAIAHALTURI.COM</div><div class="sub" id="subText">1st Class To 10th Class - Quiz, Digital Classes, Lesson Plans, Text Books, Papers Easy! • Since 2005</div></div>
-    <div id="studentInfo" style="font-size: 11px; text-align: right; display: block;">Swecha</div>
-  <button id="logoutBtn" onclick="logoutStudent()" style="display: block; background: linear-gradient(135deg, rgb(239, 68, 68), rgb(220, 38, 38)); color: rgb(255, 255, 255); border: 0px; padding: 8px 16px; border-radius: 20px; font-weight: 800; font-size: 12px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;">🚪 LOGOUT</button>
+    <div id="studentInfo" style="font-size: 11px; text-align: right; display: none;"></div>
+  <button id="logoutBtn" onclick="logoutStudent()" style="display: none; background: linear-gradient(135deg, rgb(239, 68, 68), rgb(220, 38, 38)); color: rgb(255, 255, 255); border: 0px; padding: 8px 16px; border-radius: 20px; font-weight: 800; font-size: 12px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;">🚪 LOGOUT</button>
 </div>
 <div class="lang-bar">
   <button id="btnTelugu" onclick="setLanguage('telugu')">తెలుగు</button>
@@ -142,7 +142,7 @@
     <button class="btn-p" onclick="studentLogin()" id="loginBtn" style="margin-top:14px;font-size:14px">Enter &amp; Learn 🚀</button>
   </div>
 </div>
-<div class="modal" id="adminModal" style="display: flex;"><div class="panel"><h3 id="adminTitle">Teacher Admin - 1st Class To 10th Class</h3><div id="loginBox" style="display: none;"><input id="pwd" class="inp" type="password" placeholder="Password"><button class="btn-p" onclick="adminLogin()">Login</button></div><div id="formBox" style="display: block;">
+<div class="modal" id="adminModal" style="display: none;"><div class="panel"><h3 id="adminTitle">Teacher Admin - 1st Class To 10th Class</h3><div id="loginBox" style="display: block;"><input id="pwd" class="inp" type="password" placeholder="Password"><button class="btn-p" onclick="adminLogin()">Login</button></div><div id="formBox" style="display: none;">
 
       <div style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);border:2px solid #3b82f6;border-radius:12px;padding:12px;margin:10px 0;text-align:center">
         <button class="btn-p" onclick="openVisitorsModal()" style="background:linear-gradient(135deg,#16a34a,#15803d);font-size:14px;padding:14px">👥 VISITORS DETAILS VIEW - క్లిక్ చేయండి</button>
@@ -330,7 +330,7 @@ const TRANSLATIONS={
     heroDesc:"From 1st Class To 10th Class - Quiz, Digital Classes, All Lesson Plans, Text Books, Question Papers, Key Papers Easy Learning!",
     teacherName:"NARSAIAH ALTURI", quote1:"Education is the passport to the future, for tomorrow belongs to those who prepare for it today.", quote2:"Education is the most powerful weapon which you can use to change the world.",
     filterAll:"All", filterLesson:"Lesson Plans", filterTextbook:"Text Books", filterQP:"Question Papers", filterKey:"Key Papers",
-    commentTitle:"💬 Teacher / Students Requirements", presentText:"Present - Social Studies Content Ready! | ప్రస్తుతం సోషల్ స్టడీస్ కంటెంట్ అందుబాటులో ఉంది!", comingSoonText:"⏳ Remaining Subjects త్వరలో Upload చేస్తాము - Coming Soon!", loginTitle:"Student / Teacher Login", labelName:"1. Student / Teacher Name:", labelMobile:"2. Mobile No:", labelSchool:"3. School Name:", adminTitle:"Teacher Admin"
+    commentTitle:"💬 Teacher / Students Requirements", presentText:"Present - Social Studies Content Ready! | ప్రస్తుతం సోషల్ స్టడీస్ కంటెంట్ అందుబాటులో ఉంది!", comingSoonText:"⏳ Remaining Subjects త్వరలో Upload చేస్తాము - Coming Soon!", loginTitle:"Student / Teacher Login", labelName:"Student / Teacher Name :", labelMobile:"Cell Number:", labelSchool:"School :", adminTitle:"Teacher Admin"
   },
   telugu:{
     logo:"నర్సయ్యఆల్తూరి.కామ్", sub:"1వ తరగతి నుండి 10వ తరగతి వరకు Quiz, Digital Class లు, లెసన్ ప్లాన్స్, పాఠ్యపుస్తకాలు, పేపర్లు సులభంగా! • 2005 నుండి", badge:"🌟 2005 నుండి స్ఫూర్తి",
@@ -338,7 +338,7 @@ const TRANSLATIONS={
     heroDesc:"1వ తరగతి నుండి 10వ తరగతి వరకు Quiz, Digital Class లు, అన్ని లెసన్ ప్లాన్స్, పాఠ్యపుస్తకాలు, ప్రశ్నాపత్రాలు, కీ పేపర్లు సులభంగా!",
     teacherName:"నర్సయ్య ఆల్తూరి", quote1:"విద్య అనేది భవిష్యత్తుకు పాస్‌పోర్ట్, రేపటి కోసం నేడు సిద్ధమయ్యే వారికే అది చెందుతుంది.", quote2:"విద్య అనేది అత్యంత శక్తివంతమైన ఆయుధం, దీనితో మీరు ప్రపంచాన్ని మార్చవచ్చు.",
     filterAll:"అన్నీ", filterLesson:"లెసన్ ప్లాన్స్", filterTextbook:"పాఠ్యపుస్తకాలు", filterQP:"ప్రశ్నాపత్రాలు", filterKey:"కీ పేపర్లు",
-    commentTitle:"💬 ఉపాధ్యాయ / విద్యార్థుల అవసరాలు", loginTitle:"విద్యార్థి / ఉపాధ్యాయ లాగిన్", labelName:"1. విద్యార్థి / ఉపాధ్యాయ పేరు:", labelMobile:"2. మొబైల్ నం:", labelSchool:"3. పాఠశాల పేరు:", adminTitle:"టీచర్ అడ్మిన్", presentText:"ప్రస్తుతం సోషల్ స్టడీస్ కంటెంట్ అందుబాటులో ఉంది! | Present for Social Studies", comingSoonText:"⏳ మిగిలిన సబ్జెక్టులు త్వరలో Upload చేస్తాము - Coming Soon!"
+    commentTitle:"💬 ఉపాధ్యాయ / విద్యార్థుల అవసరాలు", loginTitle:"విద్యార్థి / ఉపాధ్యాయ లాగిన్", labelName:"విద్యార్థి / ఉపాధ్యాయ పేరు :", labelMobile:"సెల్ నంబర్ :", labelSchool:"పాఠశాల :", adminTitle:"టీచర్ అడ్మిన్", presentText:"ప్రస్తుతం సోషల్ స్టడీస్ కంటెంట్ అందుబాటులో ఉంది! | Present for Social Studies", comingSoonText:"⏳ మిగిలిన సబ్జెక్టులు త్వరలో Upload చేస్తాము - Coming Soon!"
   }
 };
 function setLanguage(lang){
@@ -426,7 +426,27 @@ function studentLogin(){const n=document.getElementById('sName').value.trim();co
 function showWelcome(name,school){document.getElementById('welcomeBox').style.display='block';document.getElementById('welcomeBox').innerHTML='Welcome <b>'+name+'</b> • <a href="#" onclick="logoutStudent()">Logout</a>';document.getElementById('studentInfo').style.display='block';document.getElementById('studentInfo').innerHTML=name;
   document.getElementById('logoutBtn').style.display='block';}
 function logoutStudent(){localStorage.removeItem('narsaiah_student');document.getElementById('logoutBtn').style.display='none';document.getElementById('studentInfo').style.display='none';location.reload();}
-function checkStudent(){const s=localStorage.getItem('narsaiah_student');if(s){try{const d=JSON.parse(s);document.getElementById('studentModal').style.display='none';showWelcome(d.name,d.school);document.getElementById('logoutBtn').style.display='block';}catch(e){}}}
+function checkStudent(){
+  const s=localStorage.getItem('narsaiah_student');
+  const modal=document.getElementById('studentModal');
+  if(s){
+    try{
+      const d=JSON.parse(s);
+      if(modal) modal.style.display='none';
+      showWelcome(d.name,d.school);
+      const lb=document.getElementById('logoutBtn');
+      if(lb) lb.style.display='block';
+    }catch(e){
+      if(modal) modal.style.display='flex';
+    }
+  }else{
+    if(modal) modal.style.display='flex';
+    const si=document.getElementById('studentInfo');
+    if(si) si.style.display='none';
+    const lb=document.getElementById('logoutBtn');
+    if(lb) lb.style.display='none';
+  }
+}
 function trackVisitor(name,mobile,school){try{const list=JSON.parse(localStorage.getItem('narsaiah_visitors_v2')||'[]');list.push({time:new Date().toISOString(), name:name, mobile:mobile, school:school});localStorage.setItem('narsaiah_visitors_v2',JSON.stringify(list));}catch(e){}}
 function loadComments(){try{return JSON.parse(localStorage.getItem('narsaiah_comments')||'[]')}catch(e){return []}}
 function saveComments(list){localStorage.setItem('narsaiah_comments',JSON.stringify(list));}
